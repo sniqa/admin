@@ -1,0 +1,17 @@
+{
+	"name": "admin",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"client": "cd packages/client && npm run dev"
+	},
+	"engines": {
+		"node": "19.9.0"
+	},
+	"author": "",
+	"license": "ISC"
+}
