@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@admin/server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@admin/types": "0.0.1",
+    "typescript": "^5.2.2"
+  }
 }
