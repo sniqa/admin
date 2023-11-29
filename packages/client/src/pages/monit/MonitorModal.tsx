@@ -7,12 +7,7 @@ import {
   TextInput,
   Textarea,
 } from '@mantine/core';
-import {
-  useDebouncedState,
-  useDebouncedValue,
-  useInputState,
-  useValidatedState,
-} from '@mantine/hooks';
+
 import {
   DEVICE_NAME,
   DEVICE_TYPE,
@@ -27,7 +22,6 @@ import { z } from 'zod';
 import {
   MONITOR_STATE,
   ServerMonitInfo,
-  ServerMonitState,
   ServerMonitStatus,
 } from '@admin/types';
 
@@ -57,11 +51,11 @@ const MonitorModal = ({
 }: MonitorModalProps) => {
   const [value, setValue] = useState<ServerMonitStatus>(originalData);
 
-  const [isIpValid, setIsIpValid] = useState(true);
+  const [isIpValid, setIsIpValid] = useState(false);
 
   const valueOnUpdate = (key: keyof ServerMonitInfo, value: string) => {
     if (key === 'ip') {
-      setIsIpValid(ipSchema.safeParse(value).success);
+      value === '' ? setIsIpValid(false) : setIsIpValid(!ipSchema.safeParse(value).success) 
     }
     setValue((oldVal) => ({ ...oldVal, [key]: value }));
   };
