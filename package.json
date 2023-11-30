@@ -7,16 +7,14 @@
     "packages/*"
   ],
   "scripts": {
-    "client": "cd packages/client && npm run dev"
+    "client": "cd packages/client && npm run dev",
+    "server": "cd packages/server && npm run dev"
   },
   "engines": {
     "node": "19.9.0"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@tabler/icons-react": "^2.42.0",
-    "socket.io": "^4.7.2",
-    "socket.io-client": "^4.7.2"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

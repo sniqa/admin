@@ -4,6 +4,7 @@ import MonitorModal from './MonitorModal';
 import MonitDropzone from './MonitDropzone';
 import { ServerMonitInfo, ServerMonitStatus } from '@admin/types';
 import { useState } from 'react';
+import { useSocket } from './monitHooks';
 
 const data = [
   {
@@ -20,6 +21,8 @@ const data = [
 ];
 
 const Monitor = () => {
+  const socket = useSocket();
+
   const [opened, { open, close }] = useDisclosure(false);
 
   const [uploadOpened, { open: uploadOpen, close: uploadClose }] =

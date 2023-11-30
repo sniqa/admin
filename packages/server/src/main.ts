@@ -1,7 +1,7 @@
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 
-const httpServer = createServer();
+const httpServer = createServer({});
 
 const io = new Server(httpServer, {
   path: '/ws',
@@ -9,6 +9,7 @@ const io = new Server(httpServer, {
 
 io.on('connection', (socket) => {
   // ...
+  console.log('hello');
 });
 
-httpServer.listen(3000);
+httpServer.listen(4000);
