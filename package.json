@@ -1,0 +1,30 @@
+{
+  "name": "admin",
+  "module": "index.ts",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "cd packages/client && bun run dev",
+    "server": "cd packages/server && bun run dev"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.5.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^8.20.5",
+    "prisma": "^5.18.0",
+    "react-router-dom": "^6.26.1",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "zod": "^3.23.8"
+  }
+}
