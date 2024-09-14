@@ -7,6 +7,32 @@ body,
 #root {
   height: 100%;
   width: 100%;
+  --main-height: calc(100vh - 4rem);
+  --main-content-width: calc(100vw - 4rem);
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 4rem;
+  width: 100%;
+}
+.main {
+  height: var(--main-height);
+  width: 100%;
+}
+.main-nav {
+  height: 100%;
+  width: 4rem;
+}
+.main-content {
+  height: 100%;
+  width: var(--main-content-width);
 }
 
 /* @layer base {
@@ -74,7 +100,6 @@ body,
     @apply bg-background text-foreground;
   }
 }
-
 
 @layer base {
   :root {

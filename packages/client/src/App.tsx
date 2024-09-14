@@ -9,6 +9,8 @@ const Login = lazy(() => import("@/pages/Login"));
 const History = lazy(() => import("@/pages/History"));
 const Setup = lazy(() => import("@/pages/Setup"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const AssetEntry = lazy(() => import("@/pages/asset/AssetEntry"));
+const Network = lazy(() => import("@/pages/asset/network/Network"));
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,16 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <>index</> },
           { path: "home", element: <Home></Home> },
+          {
+            path: "asset",
+            element: <AssetEntry />,
+            children: [
+              {
+                path: "network",
+                element: <Network />,
+              },
+            ],
+          },
         ],
       },
       { path: "login", element: <Login /> },

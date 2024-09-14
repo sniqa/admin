@@ -7,9 +7,11 @@ const Entry = () => {
   return (
     <>
       <Header />
-      <Suspense fallback={<Loading />}>
-        <Outlet />
-      </Suspense>
+      <main className="main">
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
+      </main>
     </>
   );
 };
